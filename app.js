@@ -3,12 +3,22 @@ let cat = {
     name: "mr snibbly",
     moods: ["happy", "scratchy", "bitey", "ran away"],
     pets: 0,
+    moodIndex: 0,
+    tolerance: 3,
     images: ['/assets/happycat.jpg', '/assets/sratchcat.jpg', '/assets/biteycat.jpg', '/assets/ranaway.jpeg']
 }
 
 function pet() {
     //add one to pets every time pet is clicked
     cat.pets++
+    if (cat.pets % cat.tolerance == 0) {
+        cat.moodIndex++;
+    }
     //draw cat
     drawCat()
+}
+
+function drawCat() {
+    //updates the pet count
+    document.getElementById("pets").innerText = cat.pets
 }
