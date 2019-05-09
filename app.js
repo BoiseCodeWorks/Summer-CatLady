@@ -21,4 +21,7 @@ function pet() {
 function drawCat() {
     //updates the pet count
     document.getElementById("pets").innerText = cat.pets
+    document.getElementById("cat-image").setAttribute("src", cat.images[cat.moodIndex])
+    document.getElementById("mood").innerText = cat.moods[cat.moodIndex]
+
 }
