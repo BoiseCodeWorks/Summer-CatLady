@@ -24,4 +24,14 @@ function drawCat() {
     document.getElementById("cat-image").setAttribute("src", cat.images[cat.moodIndex])
     document.getElementById("mood").innerText = cat.moods[cat.moodIndex]
 
+    if (cat.moodIndex == cat.moods.length - 1) {
+        document.getElementById('pet-button').disabled = true;
+    }
+}
+
+function catNip() {
+    cat.moodIndex = 0
+    cat.pets = 0
+    document.getElementById('pet-button').disabled = false;
+    drawCat()
 }
